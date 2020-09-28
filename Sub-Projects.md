@@ -18,15 +18,35 @@ The security team is made up of Helm sub-project maintainers. The Helm Org Maint
 
 ## Helm Client
 
-The [Helm client/CLI](https://github.com/helm/helm) has a dedicated group maintaining it. The members of that team are documented in the [OWNERS](https://github.com/helm/helm/blob/master/OWNERS) file in the root of the project.
+The [Helm client/CLI](https://github.com/helm/helm) has a dedicated group maintaining it. The members of that team are documented in the [OWNERS](https://github.com/helm/helm/blob/master/OWNERS) file in the root of the repository.
 
 This team can be directly contacted at the private address of cncf-helm-core-maintainers@lists.cncf.io.
 
+## Helm-2to3
+
+A plugin for the Helm Client that helps people migrate their Helm v2 setups to Helm v3. The maintainers of this sub-project are documented in the [OWNERS](https://github.com/helm/helm-2to3/blob/master/OWNERS) file in the root of the repository.
+
+## Acceptance Testing
+
+A sub-project that performs acceptance testing on the Helm Client. The maintainers of this sub-project are documented in the [OWNERS](https://github.com/helm/acceptance-testing/blob/master/OWNERS) file in the root of the repository.
+
 ## Charts Maintainers
 
-The Charts Maintainers handle numerous repositories in the Helm GitHub organization. Specifically, those that deal with maintaining charts..
+The Charts Maintainers handle numerous repositories incolved with the stable and incubator chart repository.
 
 The charts maintainers are documented in the [OWNERS](https://github.com/helm/charts/blob/master/OWNERS) file in the root of the charts repository. They can be contacted privately at kubernetes-charts-leads@googlegroups.com.
+
+## Chart Releaser
+
+A sub-project to turn GitHub repositories into chart repositories. This sub-project includes the code along with a supporting GitHub Action. The maintainers of this sub-project are documented in the [OWNERS](https://github.com/helm/chart-releaser/blob/master/OWNERS) file in the root of the repository.
+
+## Chart Testing
+
+A sub-project to test charts. This sub-project include the code along with supporting GitHub Actions. The maintainers of this sub-project are documented in the [OWNERS](https://github.com/helm/chart-testing/blob/master/OWNERS) file in the root of the repository.
+
+## Homebrew Tap
+
+Homebrew Tap is a tap to distribute for the [Homebrew package manager](https://brew.sh/). The maintainers of this sub-project are documented in the [OWNERS](https://github.com/helm/homebrew-tap/blob/master/OWNERS) file in the root of the repository.
 
 ## Monocular
 
