@@ -4,22 +4,27 @@ The following document outlines how the Helm project governance operates.
 
 ## The Helm Project
 
-The Helm project is made up of several codebases and services with different release cycles that enable users to create, distribute, and operate packages in Kubernetes. These codebases include:
+The Helm Project provides package management for Kuberentes. It is organized as a series of sub-projects around package management with the primary sub-project being the Helm client.
+
+## Helm Sub-Projects
+
+The Helm project is made up of several sub-projects. Each of the sub-projects that distribute anything have different release cycles. These sub-projects that maintain source code include:
 
 * Helm - the package manager
-* Charts - community curated charts
+* Charts - tools for managing charts
 * Monocular - a web interface for browsing one or more chart repositories
 * Chartmuseum - a chart repository with support for pushing charts, auth, and more
-* chart-testing - container based chart testing tools
 
 The services provided include:
 
 * Documentation for those who want to create, distribute, depend on, and operate packages
-* Public chart search and discovery
+* Community relations to help manage community engagement
+
+A full list of the sub-projects can be found [here](../Sub-Projects.md).
 
 ## Maintainers Structure
 
-There are two levels of maintainers for Helm. The Helm org maintainers oversee the overall project and its health. Project maintainers focus on a single codebase, a group of related codebases, a service (e.g., a website), or project to support the other projects (e.g., marketing or community management). For example, the chart maintainers manage the charts repository and a few repositories that support charts.
+There are two levels of maintainers for Helm. The Helm org maintainers oversee the overall project and its health. Sub-project maintainers focus on a single codebase, a group of related codebases, a service (e.g., a website), or sub-project to support the other sub-projects (e.g., marketing or community management). For example, the chart maintainers manage repositories with tools to help manage charts.
 
 Changes in maintainership have to be announced on the [Helm mailing list](https://lists.cncf.io/g/cncf-helm).
 
@@ -30,12 +35,13 @@ The Helm Org maintainers are responsible for:
 * Maintaining the mission, vision, values, and scope of the project
 * Refining the governance and charter as needed
 * Making project level decisions
-* Resolving escalated project decisions when the subteam responsible is blocked
+* Resolving escalated project decisions when the sub-project responsible is blocked
 * Managing the Helm brand
 * Controlling access to Helm assets such as source repositories, hosting, project calendars
+* Creating, archiving, and deleting source code repositories
 * Handling code of conduct violations
-* Deciding what sub-groups are part of the Helm project
-* Overseeing the resolution and disclosure of security issues
+* Creating and archiving Helm sub-projects
+* Overseeing the resolution and disclosure of security issues.
 * Managing financial decisions related to the project
 
 Changes to org maintainers use the following:
@@ -45,17 +51,18 @@ Changes to org maintainers use the following:
 * No one company or organization can employ a simple majority of the org maintainers
 * An org maintainer may step down by emailing the org maintainers mailing list. Within 7 calendar days the [helm mailing list](https://lists.cncf.io/g/cncf-helm) needs to be notified of the change
 * Org maintainers MUST remain active on the project. If they are unresponsive for > 3 months they will lose org maintainership unless a [super-majority](https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote) of the other org maintainers agrees to extend the period to be greater than 3 months
-* When there is an opening for a new org maintainer, any person who has made a contribution to any repo under the Helm GitHub org may nominate a suitable project maintainer as a replacement
+* Org maintainers MUST be current sub-project maintainers. If the sub-projects they are on become archived, where they are no longer sub-project maintainers, they will loose org maintainership.
+* When there is an opening for a new org maintainer, any person who has made a contribution to any repo under the Helm GitHub org may nominate a suitable sub-project maintainer as a replacement
   * The nomination period will be three weeks starting the day after an org maintainer opening becomes available
   * The nomination must be made via the [public Helm mailing list](https://lists.cncf.io/g/cncf-helm/)
-* When nominated individual(s) agrees to be a candidate for maintainership, the project maintainers may vote
+* When nominated individual(s) agrees to be a candidate for maintainership, the all the sub-project maintainers may vote
   * The voting period will be open for a minimum of three business days and will remain open until a super-majority of project maintainers has voted
-  * Only current project maintainers are eligible to vote
+  * Only current sub-project maintainers are eligible to vote
   * When the number of nominated individuals matches the number of openings each individual needs to have a yes vote from a super-majority of those that voted
   * When there are more individuals than open positions voting will use [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method) ranking on [CIVS](http://civs.cs.cornell.edu/) using the [Schulze method](https://en.wikipedia.org/wiki/Schulze_method)
 * When an org maintainer steps down, they become an emeritus maintainer
 
-Once an org maintainer is elected, they remain a maintainer until stepping down (or, in rare cases, are removed). Voting for new maintainers occurs when necessary to fill vacancies. Any existing project maintainer is eligible to become an org maintainer.
+Once an org maintainer is elected, they remain a maintainer until stepping down (or, in rare cases, are removed). Voting for new maintainers occurs when necessary to fill vacancies. Any existing sub-project maintainer is eligible to become an org maintainer.
 
 The Org Maintainers will select a chair to set agendas and call meetings of the Org Maintainers.
 
@@ -69,20 +76,21 @@ To ensure diverse representation in the initial selection of Org Maintainers fro
 
 This accounts for a total of 7 initial Org Maintainers.
 
-### Project Maintainers
+### Sub-Project Maintainers
 
-Project maintainers are responsible for activities surrounding the development and release of code, the operation of any services they own (e.g., the documentation site), or the tasks needed to execute their project (e.g., community management, setting up an event booth). Technical decisions for code resides with the project maintainers unless there is a decision related to cross maintainer groups that cannot be resolved by those groups. Those cases can be escalated to the org maintainers.
+Sub-Project maintainers are responsible for activities surrounding the development and release of code, the operation of any services they own (e.g., the documentation site), or the tasks needed to execute their project (e.g., community management, setting up an event booth). Technical decisions for code resides with the sub-project maintainers unless there is a decision related to cross maintainer groups that cannot be resolved by those groups. Those cases can be escalated to the org maintainers.
 
-In some cases a groups of maintainers are responsible for more than one repo (e.g., charts maintainers managing the charts, chart-testing, charts-tooling). In other cases the maintainers are responsible for a single project (e.g., chartmuseum or monocular).
+In some cases a groups of maintainers are responsible for more than one repo (e.g., charts maintainers managing the charts, chart-testing, charts-tooling). In other cases the maintainers are responsible for a single codebase (e.g., chartmuseum or monocular).
 
 Project maintainers do not need to be software developers. No explicit role is placed upon them and they can be anyone appropriate for the work being produced. For example, if a repository is for documentation it would be appropriate for maintainers to be editors.
 
 Changes to maintainers use the following:
 
 * A maintainer may step down by emailing the [Helm mailing list](https://lists.cncf.io/g/cncf-helm)
-* Maintainers MUST remain active. If they are unresponsive for > 3 months they will be automatically removed unless a [super-majority](https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote) of the other project maintainers agrees to extend the period to be greater than 3 months
-* New maintainers can be added to a project by a [super-majority](https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote) vote of the existing maintainers
-* When a project has no maintainers the Helm org maintainers become responsible for it and may archive the project or find new maintainers
+* Maintainers MUST remain active. If they are unresponsive for > 3 months they will be automatically removed unless a [super-majority](https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote) of the other sub-project maintainers on that sub-project agrees to extend the period to be greater than 3 months
+* New maintainers can be added to a sub-project by a [super-majority](https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote) vote of the existing maintainers
+* When a sub-project has no maintainers the Helm org maintainers become responsible for it and may archive the sub-project or find new maintainers
+* When a sub-project is archived the sub-project maintainers become emaritis maintainers
 
 ## Decision Making at the Helm org level
 
@@ -102,6 +110,8 @@ Many of the day-to-day project maintenance can be done by a lazy consensus model
 * Utilizing Helm/CNCF money for anything CNCF deems "not cheap and easy" (simple majority)
 
 Other decisions may, but do not need to be, called out and put up for decision on the [Helm mailing list](https://lists.cncf.io/g/cncf-helm) at any time and by anyone. By default, any decisions called to a vote will be for a _simple majority_ vote.
+
+All decisions that need to be voted on need to occur on a medium that records that vote. This can be a mailing list, an issue on a repository in the Helm GitHub organization, or a recorded meeting.
 
 ## Code of Conduct
 
